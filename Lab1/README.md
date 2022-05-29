@@ -1,3 +1,7 @@
+Nom: Nicholas Turbide
+Num: 300175302
+
+
 This is the first lab of SEG3503
 
 
