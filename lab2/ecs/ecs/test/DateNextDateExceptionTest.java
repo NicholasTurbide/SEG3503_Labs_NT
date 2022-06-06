@@ -10,17 +10,20 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class DateNextDateExceptionTest{
 
+    //variables
     private int year;
     private int month;
     private int day;
 
+    //Setter
     public DateNextDateExceptionTest(int year, int month, int day){
         this.year = year;
         this.month = month;
         this.day = day;
     }
 
-    @Parameters
+    
+    @Parameters //Les tests qui seront effectués
     public static List<Integer[]> data(){
         List<Integer[]> parameters = new LinkedList<Integer[]>();
         parameters.add(new Integer[] {4356, 13, 4});
@@ -31,7 +34,7 @@ public class DateNextDateExceptionTest{
         return parameters;
     }
 
-    @Test
+    @Test //La commande des tests
     public void NextDateExceptionTest(){
         Assert.assertThrows(IllegalArgumentException.class, () -> new Date(year,month,day));
     }

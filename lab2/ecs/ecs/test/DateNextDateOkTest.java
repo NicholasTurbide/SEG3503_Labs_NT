@@ -9,7 +9,8 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class DateNextDateOkTest{
-
+	
+    //Variables
     private int yearOrigin;
     private int monthOrigin;
     private int dayOrigin;
@@ -18,7 +19,7 @@ public class DateNextDateOkTest{
     private int dayNext;
     // Where the "Origin" values are the originals, and the "Next" values represent the set of values in the following set.
     
-    
+    //Setter
     public DateNextDateOkTest(int yearO, int monthO, int daysO, int yearN, int monthN, int dayN){
         this.yearOrigin = yearO;
         this.monthOrigin = monthO;
@@ -26,10 +27,9 @@ public class DateNextDateOkTest{
         this.yearNext = yearN;
         this.monthNext = monthN;
         this.dayNext = dayN;
-
     }
     
-    //Parameters
+    @Parameters //All the tests that need to be executed
     public static List<Integer[]> data(){
         List<Integer[]> parameters = new LinkedList<Integer[]>();
         parameters.add(new Integer[] {1700,06,20,1700,06,21});
@@ -50,7 +50,7 @@ public class DateNextDateOkTest{
 		return parameters;
     }
 
-    //Test
+    @Test //Testing function
     public void NextDateOkTest(){
         Date date = new Date(yearOrigin, monthOrigin, dayOrigin);
         Date newDate = date.nextDate();
