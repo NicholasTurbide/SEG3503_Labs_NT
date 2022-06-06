@@ -15,3 +15,5 @@ Dans ce laboratoire, il fallait:
             DateNextDateOkTest.java
             DateNextDateExceptionTest.java
 
+**Note, j'ai reçu l'aide de mon ami pour executer les tests puisque je n'ai pas été capable de fair le setup du Virtual machine.
+        Mon code et mes tests son les miens.
