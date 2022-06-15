@@ -48,7 +48,7 @@ public class DateExceptionTest {
 
 	@Test(expected=IllegalArgumentException.class)
 	public void tests(){
-    		Date  date = new Date(year,month,day);
+    	Date  date = new Date(year,month,day);
 		Date next = date.nextDate();
 		Assert.assertEquals(expectedYear, next.getYear());
 		Assert.assertEquals(expectedMont, next.getMonth());
