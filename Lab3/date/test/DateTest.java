@@ -305,5 +305,3 @@ class DateTest {
 
 
 }
-
-}
