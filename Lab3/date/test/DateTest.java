@@ -199,26 +199,6 @@ class DateTest {
     assertEquals(expect, date.nextDate());
   }
 
-  void endMonth(){
-    Date date = new Date(2022, 01,31);
-    assertEquals(true, date.isEndOfMonth());
-  }
-
-  void endMonthFeb(){
-    Date date = new Date(2022, 02,28);
-    assertEquals(true, date.isEndOfMonth());
-  }
-
-  void endMonthFeb2(){
-    Date date = new Date(2020, 02,29);
-    assertEquals(true, date.isEndOfMonth());
-  }
-
-  void endMonthFeb3(){
-    Date date = new Date(2020, 02,28);
-    assertEquals(false, date.isEndOfMonth());
-  }
-
   @Test
   void isLeapYear(){
     Date today = new Date(2020, 01, 05);
