@@ -246,93 +246,90 @@ class DateTest {
   //   assertEquals(false, yesterday.equals(today));
   // }
   @Test
-  void nextDate_Invaliddate() {
-    Date today = new Date(2022, 06, 14);
-    Object obj = new Object();
-    assertEquals(false, today.equals(obj));
+  void nextDate_month9() {
+      Date today = new Date(1901, 9, 1);
+      Date expectedTomorrow = new Date(1901, 9, 2);
+      assertEquals(expectedTomorrow, today.nextDate());
   }
-  @Test
 
-  void nextDate_Invalidstting() {
-    Date today = new Date(2028, 06, 14);
-    assertEquals("2028/June/14", today.toString());
-  }
-  @Test
-
-  void nextDate_notsameyear() {
-    Date today = new Date(2022, 6, 14);
-    Date alsoToday = new Date(2021, 6, 14);
-    assertEquals(false, today.equals(alsoToday));
-  }
-  @Test
-  void nextDate_month() {
-    Date today = new Date(1915, 9, 20);
-    assertEquals(today.getMonth(), 9);
-  }
-  @Test
-  void nextDate_notsamemonth() {
-    Date today = new Date(2024, 7, 14);
-    Date alsoToday = new Date(2024, 6, 14);
-    assertEquals(false, today.equals(alsoToday));
-  }
-  @Test
-  void nextDate_notsameday() {
-    Date today = new Date(2016, 8, 8);
-    Date alsoToday = new Date(2016, 8, 7);
-    assertEquals(false, today.equals(alsoToday));
-  }
-  @Test
-  void nextDate_samedate() {
-    Date today = new Date(2020, 6, 14);
-    Date alsoToday = new Date(2020, 6, 14);
-    assertEquals(true, today.equals(alsoToday));
-  }
-  @Test
-  void nextDate_leapyear() {
-    Date today = new Date(2400, 01, 05);
-    assertEquals(true, today.isLeapYear());
-  }
-  @Test
-  void nextDate_28() {
-    Date today = new Date(2009, 2, 28);
-    Date expectedTomorrow = new Date(2009, 3, 1);
-    assertEquals(expectedTomorrow, today.nextDate());
-
-  }
-  @Test
-  void nextDate_29() {
-    Date today = new Date(2008, 2, 28);
-    Date expectedTomorrow = new Date(2008, 2, 29);
-    assertEquals(expectedTomorrow, today.nextDate());
-  }
-  @Test
-  void nextDateequl() {
-    Date today = new Date(2002, 8, 22);
-    assertTrue((today.equals(new Date(2002, 8, 22))));
+  @Test 
+  void nextDate_leapYear(){
+      Date today = new Date(2000, 1, 1);
+      Date expectedTomorrow = new Date(2000, 1, 2);
+      assertEquals(expectedTomorrow, today.nextDate());
   }
 
   @Test
-  void nextDateequl1() {
-    Date today = new Date(2002, 8, 22);
-    assertTrue(!(today.equals(new Date(2002, 8, 21))));
+  void nextDate_endOfMonth(){
+      Date today = new Date(2021, 2, 28);
+      Date expectedTomorrow = new Date(2021, 3, 1);
+      assertEquals(expectedTomorrow, today.nextDate());
   }
+
   @Test
-  void nextDateequl2() {
-    Date today = new Date(2002, 8, 30);
-    assertTrue(!(today.equals(new Date(2000, 7, 21))));
+  void nextDate_endOfMonth2(){
+      Date today = new Date(2020, 2, 28);
+      Date expectedTomorrow = new Date(2020, 2, 29);
+      assertEquals(expectedTomorrow, today.nextDate());
   }
-  @Test
-  void nextDate_invalidDay() {
-    assertThrows(
-            IllegalArgumentException.class,
-            () -> new Date(2010, 4, 31)
-    );
-  }
+
   @Test
   void nextDate_equals(){
-    Date date = new Date(2000,8,27);
-    Date date2 = new Date(2000,8,26);
-    assertFalse(date.equals(date2));
+      Object obj = new Object();
+      Date date = new Date(2021,5,27);
+      assertFalse(date.equals(obj));
+  }
+
+  @Test
+  void nextDate_equals2(){
+      Date date = new Date(2021,5,27);
+      Date date2 = new Date(2020,4,26);
+      assertFalse(date.equals(date2));
+  }
+
+  @Test
+  void nextDate_equals3(){
+      Date date = new Date(2021,5,27);
+      Date date2 = new Date(2021,4,26);
+      assertFalse(date.equals(date2));
+  }
+
+  @Test
+  void nextDate_equals4(){
+      Date date = new Date(2021,5,27);
+      Date date2 = new Date(2021,5,26);
+      assertFalse(date.equals(date2));
+  }
+
+  @Test
+  void nextDate_toString(){
+      Date date = new Date(2021,5,27);
+      assertEquals("2021/May/27",date.toString());
+  }
+
+  @Test
+  void nextDate_invalid_setDay() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(1975, 6, 32)
+    );
+  }
+
+  @Test
+  void nextDate_invalid_setDay2() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2010, 4, 31)
+    );
+  }
+
+  @Test
+  void nextDate_invalid_setDay3() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2020, 2, 30)
+    );
   }
 
 }
+
