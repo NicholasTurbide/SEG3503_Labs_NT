@@ -167,7 +167,7 @@ class DateTest {
   @Test
   void nextDateFeb29(){
     Date date = new Date(2020,02,28);
-    Date expect = new Date(2022,02,29);
+    Date expect = new Date(2020,02,29);
     assertEquals(expect, date.nextDate());
   }
 
