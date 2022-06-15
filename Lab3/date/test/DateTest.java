@@ -158,6 +158,13 @@ class DateTest {
   }
 
   @Test
+  void thirtyDayMonth(){
+    Date date = new Date(2020, 9,29);
+    Date expect = new Date(2020, 9,30);
+    assertEquals(expect, date.nextDate());
+  }
+
+  @Test
   void nextDateFeb28(){
     Date date = new Date(2022,02,28);
     Date expect = new Date(2022,03,1);
