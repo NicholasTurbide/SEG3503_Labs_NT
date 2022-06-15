@@ -26,11 +26,11 @@ public class DateNextDateExceptionTest
   public static List<Integer[]> data( )
   {
     List<Integer[]> params = new LinkedList<Integer[]>( );
-    parameters.add(new Integer[] {4356, 13, 4});
-    parameters.add(new Integer[] {400, 1, 32});
-    parameters.add(new Integer[] {-1, 11, 30});
-    parameters.add(new Integer[] {1, -11, 3});
-    parameters.add(new Integer[] {1000, 4, -3});
+    params.add(new Integer[] {4356, 13, 4});
+    params.add(new Integer[] {400, 1, 32});
+    params.add(new Integer[] {-1, 11, 30});
+    params.add(new Integer[] {1, -11, 3});
+    params.add(new Integer[] {1000, 4, -3});
     return params;
   }
 
