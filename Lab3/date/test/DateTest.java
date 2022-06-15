@@ -151,99 +151,188 @@ class DateTest {
 
   //Added Tests
 
+  // @Test
+  // void toStringCheck(){
+  //   Date date = new Date(2022, 02, 14);
+  //   assertEquals("2022/February/14", date.toString());
+  // }
+
+  // @Test
+  // void thirtyDayMonth(){
+  //   Date date = new Date(2020, 9,29);
+  //   Date expect = new Date(2020, 9,30);
+  //   assertEquals(expect, date.nextDate());
+  // }
+
+  // @Test
+  // void incorrectLeap(){
+  //   Date date = new Date(2019, 02, 28);
+  //   Date notExpect= new Date(2019, 02, 29);
+  //   assertEquals(false, notExpect.equals(date.nextDate()));
+  // }
+
+  // @Test
+  // void nextDate9month29day(){
+  //   Date date = new Date(2000, 9, 29);
+  //   Date expected = new Date(2000,9, 30);
+  //   assertEquals(expected, date.nextDate());
+  // }
+
+  // @Test
+  // void nextDateFeb28(){
+  //   Date date = new Date(2022,02,28);
+  //   Date expect = new Date(2022,03,1);
+  //   assertEquals(expect, date.nextDate());
+  // }
+
+  // @Test
+  // void nextDateFeb29(){
+  //   Date date = new Date(2020,02,28);
+  //   Date expect = new Date(2020,02,29);
+  //   assertEquals(expect, date.nextDate());
+  // }
+
+  // @Test //((day == 31) or (day == 30 and its a 30 day month) or ()
+  // void day30(){
+  //   Date date = new Date(2022,01, 30);
+  //   Date expect = new Date(2022, 01, 31);
+  //   assertEquals(expect, date.nextDate());
+  // }
+
+  // void day31(){
+  //   Date date = new Date(2022,01, 30);
+  //   Date expect = new Date(2022, 02, 01);
+  //   assertEquals(expect, date.nextDate());
+  // }
+
+  // @Test
+  // void isLeapYear(){
+  //   Date today = new Date(2020, 01, 05);
+  //   assertEquals(true, today.isLeapYear());
+  // }
+
+  // @Test 
+  // void notDate(){
+  //   Date date = new Date(2022, 05, 05);
+  //   Object obj = new Object();
+  //   assertEquals(false, date.equals(obj));
+  // }
+
+  // @Test
+  // void equals(){
+  //   Date today1 = new Date(2022, 06, 14);
+  //   Date today2 = new Date(2022, 06, 14);
+  //   assertEquals(true, today1.equals(today2));
+  // }
+
+  // @Test
+  // void diffyear(){
+  //   Date yesterYear = new Date(2021, 06, 14);
+  //   Date thisYear = new Date(2022, 06, 14);
+  //   assertEquals(false, yesterYear.equals(thisYear));
+  // }
+
+  // @Test
+  // void diffMonth(){
+  //   Date yesterMonth = new Date(2022, 05, 14);
+  //   Date today = new Date(2022, 06, 14);
+  //   assertEquals(false, yesterMonth.equals(today));
+  // }
+
+  // @Test
+  // void diffDay(){
+  //   Date yesterday = new Date(2022, 06, 13);
+  //   Date today = new Date(2022, 06, 14);
+  //   assertEquals(false, yesterday.equals(today));
+  // }
   @Test
-  void toStringCheck(){
-    Date date = new Date(2022, 02, 14);
-    assertEquals("2022/February/14", date.toString());
+  void nextDate_Invaliddate() {
+    Date today = new Date(2022, 06, 14);
+    Object obj = new Object();
+    assertEquals(false, today.equals(obj));
   }
-
   @Test
-  void thirtyDayMonth(){
-    Date date = new Date(2020, 9,29);
-    Date expect = new Date(2020, 9,30);
-    assertEquals(expect, date.nextDate());
-  }
 
+  void nextDate_Invalidstting() {
+    Date today = new Date(2028, 06, 14);
+    assertEquals("2028/June/14", today.toString());
+  }
   @Test
-  void incorrectLeap(){
-    Date date = new Date(2019, 02, 28);
-    Date notExpect= new Date(2019, 02, 29);
-    assertEquals(false, notExpect.equals(date.nextDate()));
-  }
 
+  void nextDate_notsameyear() {
+    Date today = new Date(2022, 6, 14);
+    Date alsoToday = new Date(2021, 6, 14);
+    assertEquals(false, today.equals(alsoToday));
+  }
   @Test
-  void nextDate9month29day(){
-    Date date = new Date(2000, 9, 29);
-    Date expected = new Date(2000,9, 30);
-    assertEquals(expected, date.nextDate());
+  void nextDate_month() {
+    Date today = new Date(1915, 9, 20);
+    assertEquals(today.getMonth(), 9);
   }
-
   @Test
-  void nextDateFeb28(){
-    Date date = new Date(2022,02,28);
-    Date expect = new Date(2022,03,1);
-    assertEquals(expect, date.nextDate());
+  void nextDate_notsamemonth() {
+    Date today = new Date(2024, 7, 14);
+    Date alsoToday = new Date(2024, 6, 14);
+    assertEquals(false, today.equals(alsoToday));
   }
-
   @Test
-  void nextDateFeb29(){
-    Date date = new Date(2020,02,28);
-    Date expect = new Date(2020,02,29);
-    assertEquals(expect, date.nextDate());
+  void nextDate_notsameday() {
+    Date today = new Date(2016, 8, 8);
+    Date alsoToday = new Date(2016, 8, 7);
+    assertEquals(false, today.equals(alsoToday));
   }
-
-  @Test //((day == 31) or (day == 30 and its a 30 day month) or ()
-  void day30(){
-    Date date = new Date(2022,01, 30);
-    Date expect = new Date(2022, 01, 31);
-    assertEquals(expect, date.nextDate());
-  }
-
-  void day31(){
-    Date date = new Date(2022,01, 30);
-    Date expect = new Date(2022, 02, 01);
-    assertEquals(expect, date.nextDate());
-  }
-
   @Test
-  void isLeapYear(){
-    Date today = new Date(2020, 01, 05);
+  void nextDate_samedate() {
+    Date today = new Date(2020, 6, 14);
+    Date alsoToday = new Date(2020, 6, 14);
+    assertEquals(true, today.equals(alsoToday));
+  }
+  @Test
+  void nextDate_leapyear() {
+    Date today = new Date(2400, 01, 05);
     assertEquals(true, today.isLeapYear());
   }
+  @Test
+  void nextDate_28() {
+    Date today = new Date(2009, 2, 28);
+    Date expectedTomorrow = new Date(2009, 3, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
 
-  @Test 
-  void notDate(){
-    Date date = new Date(2022, 05, 05);
-    Object obj = new Object();
-    assertEquals(false, date.equals(obj));
+  }
+  @Test
+  void nextDate_29() {
+    Date today = new Date(2008, 2, 28);
+    Date expectedTomorrow = new Date(2008, 2, 29);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+  @Test
+  void nextDateequl() {
+    Date today = new Date(2002, 8, 22);
+    assertTrue((today.equals(new Date(2002, 8, 22))));
   }
 
   @Test
-  void equals(){
-    Date today1 = new Date(2022, 06, 14);
-    Date today2 = new Date(2022, 06, 14);
-    assertEquals(true, today1.equals(today2));
+  void nextDateequl() {
+    Date today = new Date(2002, 8, 22);
+    assertTrue(!(today.equals(new Date(2002, 8, 21))));
   }
-
   @Test
-  void diffyear(){
-    Date yesterYear = new Date(2021, 06, 14);
-    Date thisYear = new Date(2022, 06, 14);
-    assertEquals(false, yesterYear.equals(thisYear));
+  void nextDateequl() {
+    Date today = new Date(2002, 8, 30);
+    assertTrue(!(today.equals(new Date(2000, 7, 21))));
   }
-
   @Test
-  void diffMonth(){
-    Date yesterMonth = new Date(2022, 05, 14);
-    Date today = new Date(2022, 06, 14);
-    assertEquals(false, yesterMonth.equals(today));
+  void nextDate_invalidDay() {
+    assertThrows(
+            IllegalArgumentException.class,
+            () -> new Date(2010, 4, 31)
+    );
   }
-
   @Test
-  void diffDay(){
-    Date yesterday = new Date(2022, 06, 13);
-    Date today = new Date(2022, 06, 14);
-    assertEquals(false, yesterday.equals(today));
+  void nextDate_equals(){
+    Date date = new Date(2000,8,27);
+    Date date2 = new Date(2000,8,26);
+    assertFalse(date.equals(date2));
   }
 
 }
