@@ -312,12 +312,12 @@ class DateTest {
   }
 
   @Test
-  void nextDateequl() {
+  void nextDateequl1() {
     Date today = new Date(2002, 8, 22);
     assertTrue(!(today.equals(new Date(2002, 8, 21))));
   }
   @Test
-  void nextDateequl() {
+  void nextDateequl2() {
     Date today = new Date(2002, 8, 30);
     assertTrue(!(today.equals(new Date(2000, 7, 21))));
   }
