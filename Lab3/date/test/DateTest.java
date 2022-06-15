@@ -178,4 +178,32 @@ class DateTest {
     assertEquals(false, date.equals(obj));
   }
 
+  @Test
+  void equals(){
+    Date today1 = new Date(2022, 06, 14);
+    Date today2 = new Date(2022, 06, 14);
+    assertEquals(true, today1.equals(today2));
+  }
+
+  @Test
+  void diffyear(){
+    Date yesterYear = new Date(2021, 06, 14);
+    Date thisYear = new Date(2022, 06, 14);
+    assertEquals(false, yesterYear.equals(thisYear));
+  }
+
+  @Test
+  void diffMonth(){
+    Date yesterMonth = new Date(2022, 05, 14);
+    Date today = new Date(2022, 06, 14);
+    assertEquals(false, yesterMonth.equals(today));
+  }
+
+  @Test
+  void diffDay(){
+    Date yesterday = new Date(2022, 06, 13);
+    Date today = new Date(2022, 06, 14);
+    assertEquals(false, yesterday.equals(today));
+  }
+
 }
