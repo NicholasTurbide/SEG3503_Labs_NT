@@ -158,6 +158,10 @@ class DateTest {
   }
 
   @Test
+  void 
+
+
+  @Test
   void nextDateFeb28(){
     Date date = new Date(2022,02,28);
     Date expect = new Date(2022,03,1);
@@ -169,6 +173,12 @@ class DateTest {
     Date date = new Date(2020,02,28);
     Date expect = new Date(2020,02,29);
     assertEquals(expect, date.nextDate());
+  }
+
+  @Test
+  void isLeapYear(){
+    Date today = new Date(2020, 01, 05);
+    assertEquals(true, today.isLeapYear());
   }
 
   @Test 
