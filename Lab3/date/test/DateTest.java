@@ -149,4 +149,33 @@ class DateTest {
     );
   }
 
+  //Added Tests
+
+  @Test
+  void toStringCheck(){
+    Date date = new Date(2022, 02, 14);
+    assertEquals("2022/February/14", date.toString());
+  }
+
+  @Test
+  void nextDateFeb28(){
+    Date date = new Date(2022,02,28);
+    Date expect = new Date(2022,03,1);
+    assertEquals(expect, date.nextDate());
+  }
+
+  @Test
+  void nextDateFeb29(){
+    Date date = new Date(2020,02,28);
+    Date expect = new Date(2022,02,29);
+    assertEquals(expect, date.nextDate());
+  }
+
+  @Test 
+  void notDate(){
+    Date date = new Date(2022, 05, 05);
+    Object obj = new Object();
+    assertEquals(false, date.equals(obj));
+  }
+
 }
