@@ -187,6 +187,17 @@ class DateTest {
   }
 
   @Test //((day == 31) or (day == 30 and its a 30 day month) or ()
+  void day30(){
+    Date date = new Date(2022,01, 30);
+    Date expect = new Date(2022, 01, 31);
+    assertEquals(expect, date.nextDate());
+  }
+
+  void day31(){
+    Date date = new Date(2022,01, 30);
+    Date expect = new Date(2022, 02, 01);
+    assertEquals(expect, date.nextDate());
+  }
 
   @Test
   void isLeapYear(){
