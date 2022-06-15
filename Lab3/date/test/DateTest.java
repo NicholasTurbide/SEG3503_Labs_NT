@@ -171,6 +171,12 @@ class DateTest {
     assertEquals(false, notExpect.equals(date.nextDate()));
   }
 
+  @Test
+  void nextDate9month29day(){
+    Date today = new Date(2000, 9, 29);
+    Date expected = new Date(2000,9, 30);
+    assertEquals(expected, date.nextDate());
+  }
 
   @Test
   void nextDateFeb28(){
