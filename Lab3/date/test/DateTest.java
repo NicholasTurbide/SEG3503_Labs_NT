@@ -165,6 +165,14 @@ class DateTest {
   }
 
   @Test
+  void incorrectLeap(){
+    Date date = new Date(2019, 02, 28);
+    Date notExpect= new Date(2019, 02, 29);
+    assertEquals(false, notExpect.equals(date.nextDate()));
+  }
+
+
+  @Test
   void nextDateFeb28(){
     Date date = new Date(2022,02,28);
     Date expect = new Date(2022,03,1);
