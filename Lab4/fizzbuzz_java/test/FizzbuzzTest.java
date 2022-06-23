@@ -14,10 +14,14 @@ public class FizzbuzzTest {
     @Test
     void fizz5(){
         Fizzbuzz fizz = new Fizzbuzz();
-        assertEquals("fizz", fizz.fizz(5));
+        assertEquals("buzz", fizz.fizz(5));
     }
 
-
+    @Test
+    void fizz10(){
+        Fizzbuzz fizz = new Fizzbuzz();
+        assertEquals("fizz", fizz.fizz(10));
+    }
 
 
 
