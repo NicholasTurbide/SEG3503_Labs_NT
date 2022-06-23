@@ -7,7 +7,7 @@ public class FizzbuzzTest {
     @Test
     void fizz3(){
         Fizzbuzz fizz = new Fizzbuzz();
-        assertEquals("fizz", fizz.fizz(3));
+        assertEquals("buzz", fizz.fizz(3));
     }
 
 
