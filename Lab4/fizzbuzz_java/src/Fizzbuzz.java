@@ -4,15 +4,15 @@ public class Fizzbuzz {
         String modulo ="";
 
         if(n % 3 == 0){
-            modulo = "fizz";
+            modulo += "fizz";
         }
         
         if(n % 5 == 0){
-            modulo = "buzz";
+            modulo += "buzz";
         }
 
         if(n % 3 != 0 && n % 5 != 0){
-           modulo = Integer.toString(n);
+           modulo += Integer.toString(n);
         }
 
         return modulo;
