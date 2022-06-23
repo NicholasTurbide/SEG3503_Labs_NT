@@ -1,7 +1,7 @@
 public class Fizzbuzz {
     
     public String fizz(int n){
-        str modulo;
+        String modulo ="";
 
         if(n % 3 == 0){
             modulo = "fizz";
