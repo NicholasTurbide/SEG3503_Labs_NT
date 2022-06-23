@@ -26,14 +26,13 @@ public class FizzbuzzTest {
     @Test
     void fizz11(){
         Fizzbuzz fizz = new Fizzbuzz();
-        assertEquals("12", fizz.fizz(11));
+        assertEquals("11", fizz.fizz(11));
     }
 
-
-    // @Test
-    // void fizz15(){
-    //     Fizzbuzz fizz = new Fizzbuzz();
-    //     assertEquals("fizzbuzz", fizz.fizz(15));
-    // }
+    @Test
+    void fizz15(){
+        Fizzbuzz fizz = new Fizzbuzz();
+        assertEquals("fizzbuzz", fizz.fizz(15));
+    }
 
 }

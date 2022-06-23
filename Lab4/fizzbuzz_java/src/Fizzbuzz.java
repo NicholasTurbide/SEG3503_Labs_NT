@@ -8,7 +8,7 @@ public class Fizzbuzz {
         }
         
         if(n % 5 == 0){
-            modulo += "buzz";
+            modulo +=  "buzz";
         }
 
         if(n % 3 != 0 && n % 5 != 0){
