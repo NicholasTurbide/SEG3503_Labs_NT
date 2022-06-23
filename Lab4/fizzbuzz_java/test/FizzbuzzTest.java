@@ -20,7 +20,7 @@ public class FizzbuzzTest {
     @Test
     void fizz10(){
         Fizzbuzz fizz = new Fizzbuzz();
-        assertEquals("fizz", fizz.fizz(10));
+        assertEquals("buzz", fizz.fizz(10));
     }
 
 
